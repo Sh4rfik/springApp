@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <!--Spring scanning file to have annotation "component" and create Bean for class with this annotation-->
+    <context:component-scan base-package="com.spring.shurfik"></context:component-scan>
+
+
+    <!--CREATE BEAN WITH XML FILE-->
+   <!-- &lt;!&ndash;create object with constructor TestBean with name Neil&ndash;&gt;
+    <bean id="testBean"
+          class="com.spring.shurfik.TestBean">
+        <constructor-arg value="Neil"/>
+    </bean>
+
+    &lt;!&ndash;IoC to MusicPlayer&ndash;&gt;
+    <bean id="musicBean1"
+          class="com.spring.shurfik.RapMusic">
+    </bean>
+    <bean id="musicBean2"
+          class="com.spring.shurfik.RockMusic">
+    </bean>
+    <bean id="musicBean"
+          class="com.spring.shurfik.ClassicMusic"
+          factory-method="getClassicalMusic"
+          init-method="myInitMethod"
+          destroy-method="destroyMethod">
+    </bean>-->
+
+
+    <!--DI with constructor-->
+    <!--<bean id="musicPlayer"
+          class="com.spring.shurfik.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>-->
+
+    <!--DI with Setter-->
+    <!--<bean id="musicPlayer"
+          class="com.spring.shurfik.MusicPlayer"
+          scope="singleton">
+
+        <property name="music"> &lt;!&ndash;property name - setter name w/o set and toLowerCase&ndash;&gt;
+            <list>
+                <ref bean="musicBean"></ref>
+                <ref bean="musicBean1"></ref>
+                <ref bean="musicBean2"></ref>
+            </list>
+        </property>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean>-->
+
+
+</beans>
