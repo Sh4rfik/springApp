@@ -1,8 +1,14 @@
 package com.spring.shurfik;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
+
+@Component
+//@Scope("prototype")
 public class ClassicMusic implements Music{
 
     private ClassicMusic(){}
@@ -12,10 +18,12 @@ public class ClassicMusic implements Music{
         return "Rhapsody";
     }
 
+    @PostConstruct
     public void myInitMethod(){
         System.out.println("Bean Initialization");
     }
 
+    @PreDestroy
     public void destroyMethod(){
         System.out.println("Destroy bean");
     }

@@ -11,12 +11,19 @@ public class TestSpring {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
-/*
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.getVolume());
+        System.out.println(musicPlayer.getName());
 
-        musicPlayer.playMusic();*/
+        ClassicMusic classicMusic = context.getBean("classicMusic", ClassicMusic.class);
+        //RapMusic rapMusic = context.getBean("someRapMusic", RapMusic.class);
+        //RapMusic rapMusic1 = context.getBean("someRapMusic", RapMusic.class);
+
+        //System.out.println(rapMusic==rapMusic1);
+
+
+
+
 
         context.close();
 
@@ -32,7 +39,12 @@ public class TestSpring {
 
 
 
+        /*Computer computer = context.getBean("computer", Computer.class);
+        System.out.println(computer);*/
+/*
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
+        musicPlayer.playMusic();*/
 
 
         //TestBean testBean = context.getBean("testBean", TestBean.class);

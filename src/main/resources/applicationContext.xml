@@ -8,6 +8,7 @@
 
     <!--Spring scanning file to have annotation "component" and create Bean for class with this annotation-->
     <context:component-scan base-package="com.spring.shurfik"></context:component-scan>
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
 
     <!--CREATE BEAN WITH XML FILE-->

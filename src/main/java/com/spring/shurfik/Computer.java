@@ -3,7 +3,7 @@ package com.spring.shurfik;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Computer {
 
     private int id;
