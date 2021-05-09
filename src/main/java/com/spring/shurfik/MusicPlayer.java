@@ -1,17 +1,25 @@
 package com.spring.shurfik;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
 
     //private List<Music> music = new ArrayList<>();
-    private String name;
-    private int volume;
+    /*private String name;
+    private int volume;*/
+    //private Music music;
 
-    private Music music;
+    private RapMusic rapMusic;
+    private RockMusic rockMusic;
+
+    @Autowired
+    public MusicPlayer(RapMusic rapMusic, RockMusic rockMusic) {
+        this.rapMusic = rapMusic;
+        this.rockMusic = rockMusic;
+    }
 
     //IoC
     /*public MusicPlayer(List<Music> music) {
@@ -26,12 +34,8 @@ public class MusicPlayer {
         this.music = music;
     }*/
 
-    public MusicPlayer() {
-    }
 
-    public MusicPlayer(Music music) {
-        this.music = music;
-    }
+/*
 
     public String getName() {
         return name;
@@ -48,10 +52,11 @@ public class MusicPlayer {
     public void setVolume(int volume) {
         this.volume = volume;
     }
+*/
 
-
-
-    public void playMusic() {
-        System.out.println("Playing " + music.getSong());
+    public String playMusic() {
+        return "Playing " + rapMusic.getSong();
+        /*System.out.println("Playing " + rapMusic.getSong());
+        System.out.println("Playing " + rockMusic.getSong());*/
     }
 }
